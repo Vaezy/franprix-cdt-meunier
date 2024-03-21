@@ -1,0 +1,97 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lexend", sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.main-header img {
+    width: 150px;
+}
+
+nav {
+    border: 1px solid rgb(237, 237, 237);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+    width: 30em;
+    border: 1px solid rgb(219, 217, 217);
+    border-radius: 50px;
+}
+
+.search-container input {
+    font-family: "Lexend", sans-serif;
+    width: 80%;
+    padding: 12px 15px 12px 15px;
+    border: none;
+    border-radius: 50px;
+}
+
+.search-container input:focus {
+    outline: none;
+}
+
+.search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.search-btn button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.search-btn #clearSearch {
+    display: none;
+}
+
+.nav-link ul {
+    display: flex;
+}
+
+.nav-link ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.nav-link ul li a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-link ul li a p {
+    position: relative;
+    font-size: 12px;
+    margin: 0;
+}
+
+@media only screen and (max-width:900px) {
+    .nav-link ul li {
+        margin: 0 15px;
+    }
+    .nav-link ul li a p {
+        display: none;
+    }
+}
