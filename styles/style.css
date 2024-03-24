@@ -90,19 +90,20 @@ nav .link-container ul li a p {
 }
 
 .product-container {
-    position: absolute;
+    position: relative;
     width: 100%;
     background: #FFE484;
 }
 
-.product-container ul {
+.product-container .ul-product {
     display: flex;
     justify-content: center;
     margin: 0;
     padding: 0;
 }
 
-.product-container ul li {
+.product-container .ul-product .li-product {
+    position: relative;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -116,13 +117,42 @@ nav .link-container ul li a p {
     border-right: 1px solid #f1c046;
 }
 
-.product-container ul li:last-child {
+.product-container .ul-product .li-product:last-child {
     border-right: none;
 }
 
-.product-container ul li a {
+.product-container .ul-product .li-product a {
     text-decoration: none;
     color: black;
+}
+
+.item-container {
+    position: absolute;
+    top: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.item-container .ul-item {
+    cursor: auto;
+    display: none;
+    position: relative;
+    padding: 0;
+}
+
+.item-container .ul-item .li-item {
+    cursor: pointer;
+    list-style: none;
+    margin: 15px 30px 15px 30px;
+    font-size: 14px;
+    font-weight: 400;
+    width: 200px;
+    text-align: start;
+    border: 1px solid red;
+}
+
+.li-product:hover .ul-item {
+    display: flex;
 }
 
 @media only screen and (max-width:900px) {
