@@ -93,7 +93,7 @@ nav .link-container ul li a p {
     display: none;
 }
 
-#burger-icon {
+#icon-rotation {
     transition: transform 1s ease;
 }
 
@@ -145,18 +145,40 @@ nav .link-container ul li a p {
     display: block;
 }
 
-.item-container {
+.product-container .ul-product .li-product a .right-arrow {
     position: absolute;
-    top: 100%;
-    margin: 5px 0px;
-    left: 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    right: 0;
+    top: 15px;
+}
+
+.product-container .ul-product .li-product a .right-arrow button {
+    background: none;
+    border: none;
 }
 
 .li-product:nth-child(n+6) .item-container {
     left: auto;
     right: 0;
+}
+
+.li-product:hover .item-container {
+    opacity: 1;
+}
+
+.li-product:hover .ul-item {
+    display: flex;
+}
+
+.item-container {
+    position: absolute;
+    top: 100%;
+    margin: 0;
+    left: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    opacity: 0;
 }
 
 .item-container .ul-item {
@@ -169,16 +191,11 @@ nav .link-container ul li a p {
 .item-container .ul-item .li-item {
     cursor: pointer;
     list-style: none;
-    margin: 15px 30px 15px 30px;
+    padding: 20px 30px 10px 30px;
     font-size: 14px;
     font-weight: 400;
     width: 200px;
     text-align: start;
-    border: 1px solid red;
-}
-
-.li-product:hover .ul-item {
-    display: flex;
 }
 
 @media only screen and (max-width:905px) {
@@ -191,10 +208,14 @@ nav .link-container ul li a p {
     .burger-menu {
         display: block;
     }
+    .product-container.show {
+        display: block;
+    }
     .product-container {
         position: absolute;
         display: none;
         background: none;
+        height: 100rem;
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
         animation: animFromLeft 1s forwards;
     }
@@ -221,8 +242,17 @@ nav .link-container ul li a p {
     .product-container .ul-product .li-product a span {
         display: none;
     }
-    .product-container.show {
+    .product-container .ul-product .li-product a .right-arrow {
         display: block;
+    }
+    .li-product:hover .item-container {
+        background: #fff;
+        width: 100%;
+        z-index: 1;
+    }
+    .li-product:nth-child(n+1) .item-container {
+        left: auto;
+        right: 0;
     }
 }
 

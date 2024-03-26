@@ -1,3 +1,5 @@
+// function to display an icon to empty the search content
+
 const searchInput = document.getElementById('searchInput');
 const clearSearch = document.getElementById('clearSearch');
 
@@ -12,6 +14,8 @@ clearSearch.addEventListener('click', () => {
     toggleButtons();
 });
 
+// button to display burger menu icon
+
 document.addEventListener('DOMContentLoaded', function() {
     const burgerMenuBtn = document.querySelector('.burger-menu button');
     const productContainer = document.querySelector('.product-container');
@@ -20,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         productContainer.classList.toggle('show');
     });
     
-    const burgerIcon = document.getElementById('burger-icon');
+    const burgerIcon = document.getElementById('icon-rotation');
     let isOpen = false;
 
     burgerIcon.addEventListener('click', function(){
@@ -34,3 +38,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })
 });
+
+// button to display right arrow for responsive
+
+document.addEventListener('DOMContentLoaded', function() {
+    const iconRotationButtons = document.querySelectorAll('.right-arrow #icon-rotation');
+
+    iconRotationButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            const parentLi = this.closest('.li-product');
+            const itemContainer = parentLi.querySelector('.item-container');
+            const icon = this.querySelector('iconify-icon');
+
+            if (itemContainer) {
+                if (itemContainer.style.opacity === '1') {
+                    itemContainer.style.opacity = '0';
+                    itemContainer.style.visibility = 'hidden';
+                    this.style.transform = 'rotate(0deg)';
+                } else {
+                    itemContainer.style.opacity = '1';
+                    itemContainer.style.visibility = 'visible';
+                    this.style.transform = 'rotate(90deg)';
+                }
+            }
+        });
+    });
+});
+
+
+
+
+
